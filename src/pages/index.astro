@@ -1,0 +1,375 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import HeroBannerImage from "@assets/camilo.jpg";
+import YogaImage from "@assets/camilo2.jpg";
+import SonidoImage from "@assets/camilo3.jpg";
+import CamiloYoga from "@assets/camilo4.jpg";
+import CamiloHealer from "@assets/camilo5.jpg";
+
+const phone = "573168746720";
+const whatsappUrl = "https://wa.me/" + phone;
+const packages = [
+    { name: "Clase de Yoga Personalizada", price: "30,000 COP / $7.50 USD" },
+    { name: "Clase de Yoga en Grupo", price: "25,000 COP / $6.25 USD" },
+    { name: "Clase de Yoga x4", price: "110,000 COP / $27.50 USD" },
+    { name: "Clase de Yoga x8", price: "200,000 COP / $50.00 USD" },
+    { name: "Terapia Reiki", price: "70,000 COP / $17.50 USD" },
+    { name: "Lectura Iching", price: "40,000 COP / $10.00 USD" },
+    { name: "Terapia de Reiki + Sonido", price: "80,000 COP / $20.00 USD" },
+    {
+        name: "Terapia Reiki + Lectura Iching",
+        price: "100,000 COP / $25.00 USD",
+    },
+];
+---
+
+<Layout>
+    <div class="page">
+        <section class="banner">
+            <div class="content">
+                <div class="hero-header">
+                    <h1>Encuentra Tu Paz Interior</h1>
+                    <p>
+                        Únete a mis clases de yoga transformadoras que nutren tu
+                        cuerpo, mente y alma.
+                    </p>
+                </div>
+                <p>
+                    Con un enfoque en la respiración y la meditación, mis clases
+                    te ayudarán a encontrar la paz interior y la claridad
+                    mental. A través de la práctica regular, podrás mejorar tu
+                    flexibilidad, fuerza y equilibrio. Ademas de reducir el
+                    estrés y la ansiedad.
+                </p>
+                <div class="cta">
+                    <a
+                        class="button"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={`${whatsappUrl}?text=Hola%20Camilo,%20estoy%20interesado%20en%20tus%20clases%20de%20yoga%20y%20tus%20terapias%20de%20sanacion%20alternativas%20¿Me%20podrias%20dar%20mas%20informacion%20por%20favor?`}
+                        >Reserva tu clase</a
+                    >
+                </div>
+            </div>
+            <img src={HeroBannerImage.src} alt="Hero Banner" />
+        </section>
+        <section class="banner">
+            <img src={YogaImage.src} alt="Hero Banner" />
+            <div class="content">
+                <h2>¿Por qué elegirme?</h2>
+                <p>
+                    Como instructor altamente capacitado y experimentado, estoy
+                    aquí para guiarte en tu viaje de yoga. Con una amplia
+                    variedad de clases, desde principiantes hasta avanzados, hay
+                    algo para todos. Mi objetivo es ayudarte a encontrar la paz
+                    interior y la claridad mental a través de la práctica
+                    regular de yoga.
+                </p>
+                <h2>Mi Enfoque</h2>
+                <p>
+                    Mi enfoque en la respiración y la meditación te ayudará a
+                    mejorar tu flexibilidad, fuerza y equilibrio, y a reducir el
+                    estrés y la ansiedad. Manejo un estilo de yoga suave y
+                    restaurativo, que es perfecto para aquellos que buscan
+                    relajarse y rejuvenecer. Mis clases son una combinación de
+                    posturas de yoga, respiración consciente y meditación, que
+                    te ayudarán a encontrar la paz interior y la claridad
+                    mental.
+                </p>
+            </div>
+        </section>
+        <section class="banner">
+            <div class="content">
+                <h2>¿Que esperar de una clase de Yoga?</h2>
+                <p>
+                    Mis clases de yoga están diseñadas para ayudarte a encontrar
+                    la paz interior y la claridad mental a través de la práctica
+                    regular de yoga. Con un enfoque en la respiración y la
+                    meditación, mis clases te ayudarán a mejorar tu
+                    flexibilidad, fuerza y equilibrio, y a reducir el estrés y
+                    la ansiedad.
+                </p>
+                <h2>Beneficios del Yoga</h2>
+                <p>
+                    El yoga tiene muchos beneficios para la salud física y
+                    mental. Algunos de los beneficios incluyen:
+                </p>
+                <ul class="bullet-points">
+                    <li class="highlight">
+                        Mejora la flexibilidad y la fuerza.
+                    </li>
+                    <li class="highlight">Reduce el estrés y la ansiedad.</li>
+                    <li class="highlight">
+                        Mejora la concentración y la claridad mental.
+                    </li>
+                    <li class="highlight">
+                        Alivia el dolor y la tensión muscular.
+                    </li>
+                    <li class="highlight">Mejora la calidad del sueño.</li>
+                </ul>
+            </div>
+            <img src={CamiloYoga.src} alt="Hero Banner" />
+        </section>
+        <section class="banner">
+            <div class="content">
+                <h2>Clases de Yoga</h2>
+                <p>
+                    Ofrezco una amplia variedad de clases de yoga para todos los
+                    niveles. Desde principiantes hasta avanzados, hay algo para
+                    todos. Como instructor altamente capacitado y experimentado,
+                    estoy aquí para guiarte en tu viaje de yoga.
+                </p>
+                <div class="packages-carrousel">
+                    {
+                        packages.slice(0, 4).map((pkg) => (
+                            <a
+                                href={`${whatsappUrl}?text=Hola%20Camilo,%20quiero%20contratar%20una%20"${encodeURIComponent(pkg.name)}"%20contigo`}
+                                class="package-card"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <div class="card-content">
+                                    <h3>{pkg.name}</h3>
+                                    <p>
+                                        Mis clases de yoga personalizadas están
+                                        diseñadas para satisfacer tus
+                                        necesidades y objetivos específicos. Ya
+                                        sea que estés buscando mejorar tu
+                                        flexibilidad, fuerza o equilibrio, mis
+                                        clases te ayudarán a alcanzar tus metas.
+                                    </p>
+                                </div>
+                                <div class="price">
+                                    <span>{pkg.price}</span>
+                                </div>
+                            </a>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+        <section class="banner">
+            <img src={SonidoImage.src} alt="Hero Banner" />
+            <div class="content">
+                <h2>¿Que es la Terapia Reiki?</h2>
+                <p>
+                    Mi terapia Reiki es una forma de sanación energética que te
+                    ayuda a equilibrar tu cuerpo, mente y alma. Con la
+                    imposición de manos y la transferencia de energía, la
+                    terapia Reiki te ayuda a liberar el estrés, la ansiedad y
+                    las emociones negativas, y a restaurar tu bienestar y
+                    armonía interna.
+                </p>
+                <h2>Beneficios de la Terapia Reiki</h2>
+                <p>
+                    La terapia Reiki tiene muchos beneficios para la salud
+                    física y mental. Algunos de los beneficios incluyen:
+                </p>
+                <ul class="bullet-points">
+                    <li class="highlight">
+                        Equilibra el cuerpo, la mente y el alma.
+                    </li>
+                    <li class="highlight">Libera el estrés y la ansiedad.</li>
+                    <li class="highlight">
+                        Promueve la relajación y la claridad mental.
+                    </li>
+                    <li class="highlight">
+                        Alivia el dolor y la tensión muscular.
+                    </li>
+                    <li class="highlight">Mejora la calidad del sueño.</li>
+                </ul>
+            </div>
+        </section>
+        <section class="banner">
+            <div class="content">
+                <h2>¿Que es la Lectura I Ching?</h2>
+                <p>
+                    Mi lectura de I Ching es una forma de adivinación que te
+                    ayuda a obtener claridad y orientación sobre tu vida y tus
+                    circunstancias actuales. Con el uso de hexagramas y líneas
+                    cambiantes, la lectura de I Ching te ayuda a comprender
+                    mejor tu situación y a tomar decisiones informadas.
+                </p>
+                <h2>Beneficios de la Lectura I Ching</h2>
+                <p>
+                    La lectura de I Ching tiene muchos beneficios para la salud
+                    física y mental. Algunos de los beneficios incluyen:
+                </p>
+                <ul class="bullet-points">
+                    <li class="highlight">
+                        Proporciona claridad y orientación.
+                    </li>
+                    <li class="highlight">Ofrece perspectiva y sabiduría.</li>
+                    <li class="highlight">
+                        Ayuda a comprender mejor tu situación.
+                    </li>
+                    <li class="highlight">
+                        Te ayuda a tomar decisiones informadas.
+                    </li>
+                    <li class="highlight">Promueve la introspección.</li>
+                </ul>
+            </div>
+            <img src={CamiloHealer.src} alt="Hero Banner" />
+        </section>
+        <section class="banner">
+            <div class="content">
+                <h2>Terapias Alternativas</h2>
+                <p>
+                    Además de mis clases de yoga, también ofrezco terapias
+                    alternativas para ayudarte a encontrar la paz interior y la
+                    claridad mental. Desde la terapia Reiki hasta la terapia de
+                    sonido, hay algo para todos. Mis terapias alternativas te
+                    ayudarán a liberar el estrés, la ansiedad y las emociones
+                    negativas, y a restaurar tu bienestar y armonía interna.
+                </p>
+                <div class="packages-carrousel">
+                    {
+                        packages.slice(4).map((pkg) => (
+                            <a
+                                href={`${whatsappUrl}?text=Hola%20Camilo,%20quiero%20contratar%20una%20"${encodeURIComponent(pkg.name)}"%20contigo`}
+                                class="package-card"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <div class="card-content">
+                                    <h3>{pkg.name}</h3>
+                                    <p>
+                                        Mi terapia Reiki es una forma de
+                                        sanación energética que te ayuda a
+                                        equilibrar tu cuerpo, mente y alma. Con
+                                        la imposición de manos y la
+                                        transferencia de energía, la terapia
+                                        Reiki te ayuda a liberar el estrés, la
+                                        ansiedad y las emociones negativas, y a
+                                        restaurar tu bienestar y armonía
+                                        interna.
+                                    </p>
+                                </div>
+                                <div class="price">
+                                    <span>{pkg.price}</span>
+                                </div>
+                            </a>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+    </div>
+</Layout>
+
+<style lang="scss">
+    $h1-text-color: #d98e31;
+    $glowing-color: #f2ebdc;
+    $p-text-color: #f2ebdc;
+    $card-bg-color: #593c2c;
+    $price-highlight-color: #f3d295;
+
+    .page {
+        background-size: cover;
+        background-position: center;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    h1,
+    h2 {
+        color: $h1-text-color;
+        margin: 0px;
+        font-weight: bold;
+    }
+    .banner {
+        max-width: 1200px;
+        display: flex;
+        gap: 5rem;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            .bullet-points {
+                list-style-type: disc;
+                padding-left: 1.5rem;
+                li {
+                    margin-bottom: 0.5rem;
+                    color: $p-text-color;
+                    font-size: 1.2rem;
+                }
+                .highlight {
+                    font-style: italic;
+                }
+            }
+        }
+        .hero-header {
+            gap: 0px;
+            p {
+                font-style: italic;
+                color: $p-text-color;
+            }
+        }
+
+        img {
+            height: 100%;
+            max-height: 600px;
+            object-fit: contain;
+            border-radius: 40px;
+        }
+
+        .packages-carrousel {
+            max-width: 1200px;
+            display: flex;
+            gap: 2rem;
+            justify-content: flex-start;
+            align-items: center;
+            overflow: scroll;
+            padding: 1rem;
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+            scrollbar-width: none; /* Firefox */
+            &::-webkit-scrollbar {
+                display: none; /* Safari and Chrome */
+            }
+            .package-card {
+                flex: 0 0 auto;
+                background: $card-bg-color;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 1rem;
+                max-width: 300px;
+                height: 500px;
+                text-align: center;
+                transition: box-shadow 0.3s ease-in-out;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .card-content {
+                    flex-grow: 1;
+                }
+                .price {
+                    font-weight: bold;
+                    color: $price-highlight-color;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    p {
+                        margin: 0px;
+                    }
+                }
+                h3 {
+                    color: $h1-text-color;
+                    margin-bottom: 0.5rem;
+                }
+                p {
+                    color: $p-text-color;
+                }
+                &:hover {
+                    box-shadow: 0 4px 20px $glowing-color;
+                }
+            }
+        }
+    }
+</style>

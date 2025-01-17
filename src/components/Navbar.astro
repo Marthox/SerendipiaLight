@@ -1,0 +1,30 @@
+---
+import log from "@assets/logo_light.png";
+
+type NavItem = {
+    url: string;
+    text: string;
+};
+
+const dummy_data: NavItem[] = [
+    { url: "/", text: "Home" },
+    { url: "/about", text: "About" },
+    { url: "/contact", text: "Contact" },
+];
+---
+
+<nav>
+    <img src={log.src} alt="Logo" />
+    <ul>
+        {
+            dummy_data.map((item: NavItem) => (
+                <li>
+                    <a href={item.url}>{item.text}</a>
+                </li>
+            ))
+        }
+    </ul>
+    Menu
+</nav>
+
+<style></style>
