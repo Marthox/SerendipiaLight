@@ -6,25 +6,33 @@ type NavItem = {
     text: string;
 };
 
-const dummy_data: NavItem[] = [
-    { url: "/", text: "Home" },
+const nav_data: NavItem[] = [
     { url: "/about", text: "About" },
     { url: "/contact", text: "Contact" },
+    { url: "/blog", text: "Blog" },
+    { url: "/resources", text: "Resources" },
 ];
 ---
 
 <nav>
-    <img src={log.src} alt="Logo" />
+    <a href={"/"}>
+        <img src={log.src} alt="Logo" />
+    </a>
     <ul>
         {
-            dummy_data.map((item: NavItem) => (
-                <li>
-                    <a href={item.url}>{item.text}</a>
-                </li>
+            nav_data.map((item: NavItem) => (
+                <a href={item.url}>
+                    <li>{item.text}</li>
+                </a>
             ))
         }
     </ul>
     Menu
 </nav>
 
-<style></style>
+<style>
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+</style>
