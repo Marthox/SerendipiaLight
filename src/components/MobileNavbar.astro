@@ -1,0 +1,157 @@
+---
+import log from "@assets/logo_light.png";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+type NavItem = {
+    url: string;
+    text: string;
+};
+
+const nav_data: NavItem[] = [
+    { url: "/about", text: t("nav.about") },
+    { url: "/contact", text: t("nav.contact") },
+    { url: "/blog", text: t("nav.blog") },
+    { url: "/resources", text: t("nav.resources") },
+];
+---
+
+<nav class="mobile-navbar">
+    <div class="navbar-header">
+        <a href="/">
+            <img src={log.src} alt="Logo" />
+        </a>
+        <button class="hamburger-menu" aria-label="Toggle menu">
+            <i class="bi bi-list"></i>
+        </button>
+    </div>
+    <div class="mobile-menu">
+        <div class="mobile-menu-container">
+            <button class="close-menu" aria-label="Close menu">
+                <i class="bi bi-x"></i>
+            </button>
+            <ul class="mobile-navbar-list">
+                {
+                    nav_data.map((item: NavItem) => (
+                        <li>
+                            <a href={item.url}>{item.text}</a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const hamburgerMenu = document.querySelector(".hamburger-menu");
+        const closeMenu = document.querySelector(".close-menu");
+        const mobileMenu = document.querySelector(".mobile-menu");
+
+        if (hamburgerMenu && mobileMenu) {
+            hamburgerMenu.addEventListener("click", () => {
+                mobileMenu.classList.add("open");
+            });
+        }
+
+        if (closeMenu && mobileMenu) {
+            closeMenu.addEventListener("click", () => {
+                mobileMenu.classList.remove("open");
+            });
+        }
+    });
+</script>
+
+<style>
+    .mobile-navbar {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 20;
+        align-items: center;
+    }
+
+    .navbar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+    }
+
+    .hamburger-menu {
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .mobile-menu {
+        display: none;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: white;
+        z-index: 30;
+        overflow-y: auto;
+    }
+
+    .mobile-menu.open {
+        display: flex;
+        align-items: center;
+    }
+
+    .mobile-menu-container {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        padding: 1rem;
+    }
+
+    .close-menu {
+        align-self: flex-end;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .mobile-navbar-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .mobile-navbar-list li {
+        position: relative;
+        width: 100%;
+    }
+
+    .mobile-navbar-list a {
+        text-decoration: none;
+        color: inherit;
+        font-size: 1.2rem;
+        display: block;
+        padding: 1rem 0;
+    }
+
+    @media (min-width: 769px) {
+        .mobile-navbar {
+            display: none;
+        }
+    }
+    @media (max-width: 768px) {
+        .mobile-navbar {
+            display: flex;
+        }
+    }
+</style>

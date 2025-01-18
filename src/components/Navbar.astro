@@ -1,5 +1,9 @@
 ---
 import log from "@assets/logo_light.png";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 type NavItem = {
     url: string;
@@ -7,14 +11,14 @@ type NavItem = {
 };
 
 const nav_data: NavItem[] = [
-    { url: "/about", text: "About" },
-    { url: "/contact", text: "Contact" },
-    { url: "/blog", text: "Blog" },
-    { url: "/resources", text: "Resources" },
+    { url: "/about", text: t("nav.about") },
+    { url: "/contact", text: t("nav.contact") },
+    { url: "/blog", text: t("nav.blog") },
+    { url: "/resources", text: t("nav.resources") },
 ];
 ---
 
-<nav>
+<nav class="desktop-navbar">
     <a href={"/"}>
         <img src={log.src} alt="Logo" />
     </a>

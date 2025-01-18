@@ -10,7 +10,7 @@ export function getLangFromUrl(url) {
  * Returns a function that takes a key and returns the translation for
  * that key in the specified language.
  * @param {string} lang ["en"|"es"]
- * @returns {string}
+ * @returns {function} t
  */
 export function useTranslations(lang) {
     return function t(key) {

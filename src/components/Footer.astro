@@ -3,59 +3,60 @@
 ---
 
 <footer>
-    <div class="footer-content">
-        <ul>
-            <a href="/about"><li>About Us</li></a>
-            <a href="/contact"><li>Contact</li></a>
-            <a href="/privacy"><li>Privacy Policy</li></a>
-        </ul>
-        <div class="footer-info">
-            <span>&copy; 2023 SerendipiaLight. All rights reserved.</span>
-            <span>
-                Page created by <a
-                    href="https://marthox.com"
-                    target="_blank"
-                    rel="noopener noreferrer">marthox</a
-                >.
-            </span>
-        </div>
+    <ul>
+        <a href="/about"><li>About Us</li></a>
+        <a href="/contact"><li>Contact</li></a>
+        <a href="/privacy"><li>Privacy Policy</li></a>
+    </ul>
+    <div class="footer-info">
+        <span>&copy; 2023 SerendipiaLight. All rights reserved</span>
+        <span>
+            Page created by <a
+                href="https://marthox.com"
+                target="_blank"
+                rel="noopener noreferrer">Marthox</a
+            >
+        </span>
     </div>
 </footer>
 
-<style>
+<style lang="scss">
     a {
         text-decoration: none;
         color: white;
     }
     footer {
-        color: #fff;
-        padding: 20px 0;
-        text-align: center;
-    }
-    .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-    .footer-info {
         display: flex;
-        justify-content: space-between;
-    }
-    nav {
-        background-color: transparent;
-        box-shadow: none;
-    }
-    ul {
-        list-style: none;
-        padding: 0;
-    }
-    ul a {
-        display: inline-block;
-        margin: 0 10px;
+        flex-direction: column;
         color: #fff;
-        text-decoration: none;
+        margin: 20px 0;
+        gap: 1rem;
+        text-align: center;
+        .footer-info {
+            display: flex;
+            justify-content: space-around;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+        ul a:hover {
+            text-decoration: underline;
+        }
     }
-    ul a:hover {
-        text-decoration: underline;
+    @media (max-width: 768px) {
+        footer {
+            .footer-info {
+                display: flex;
+                gap: 1rem;
+                flex-direction: column;
+            }
+        }
     }
 </style>
