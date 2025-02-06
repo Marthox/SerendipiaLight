@@ -1,0 +1,89 @@
+---
+import Layout from "@layouts/Layout.astro";
+import chakras from "@assets/post_chakras.jpg";
+import mudras from "@assets/post_mudras.jpg";
+import pranayamas from "@assets/post_pranayamas.jpg";
+import reiki from "@assets/post_reiki.jpg";
+import yoga_principiantes from "@assets/post_yoga_principiantes.jpeg";
+import errores_yoga from "@assets/post_errores_yoga.webp";
+
+const posts = [
+    {
+        title: "Mudras: Historia, Tipos, Beneficios y Simbología",
+        description:
+            "Explora los mudras, gestos simbólicos realizados con las manos que poseen un profundo significado espiritual y energético.",
+        url: "/posts/mudras",
+        cover: mudras.src,
+    },
+    {
+        title: "Chakras: Los 7 Centros Energéticos de Nuestro Ser",
+        description:
+            "Descubre los chakras, centros de energía que influyen en nuestra salud física, mental y emocional.",
+        url: "/posts/chakras",
+        cover: chakras.src,
+    },
+    {
+        title: "Pranayama: La Magia de la Respiración Consciente",
+        description:
+            "Aprende las técnicas de pranayama, ejercicios de respiración que purifican el cuerpo y la mente.",
+        url: "/posts/pranayamas",
+        cover: pranayamas.src,
+    },
+    {
+        title: "Reiki: La Energía de Sanación y su Importancia",
+        description:
+            "Qué es el Reiki, cómo funciona y sus beneficios para el bienestar integral.",
+        url: "/posts/reiki",
+        cover: reiki.src,
+    },
+    {
+        title: "Yoga para principiantes",
+        description:
+            "Una guía para iniciar tu camino en el yoga con suavidad y conciencia.",
+        url: "/posts/yoga_principiantes",
+        cover: yoga_principiantes.src,
+    },
+    {
+        title: "Errores Comunes al Practicar Yoga y Cómo Evitarlos",
+        description:
+            "Descubre los errores más comunes en la práctica del yoga y cómo evitarlos para maximizar sus beneficios.",
+        url: "/posts/errores_yoga",
+        cover: errores_yoga.src,
+    },
+];
+---
+
+<Layout lang="es" title="Posts">
+    <div class="page">
+        <div class="banner">
+            <h1>Posts</h1>
+            <p>
+                Aqui encontrarás una selección de artículos sobre yoga,
+                meditación y bienestar para inspirar tu práctica y tu vida
+                diaria.
+            </p>
+        </div>
+        <div class="posts-grid">
+            {
+                posts.map((post) => (
+                    <div class="post-card">
+                        <img src={post.cover} alt={post.title} />
+                        <h2>{post.title}</h2>
+                        <p>{post.description}</p>
+                        <a class="button" href={post.url}>
+                            Leer más
+                        </a>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .banner {
+        align-items: start;
+        flex-direction: column;
+        gap: 2rem;
+    }
+</style>

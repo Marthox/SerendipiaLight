@@ -1,5 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
 
 import HeroBannerImage from "@assets/camilo.jpg";
 import YogaImage from "@assets/camilo2.jpg";
@@ -9,11 +9,14 @@ import CamiloHealer from "@assets/camilo5.jpg";
 
 const phone = "573168746720";
 const whatsappUrl = "https://wa.me/" + phone;
-const packages = [
+const yoga_packages = [
     { name: "Clase de Yoga Personalizada", price: "30,000 COP / $7.50 USD" },
     { name: "Clase de Yoga en Grupo", price: "25,000 COP / $6.25 USD" },
     { name: "Clase de Yoga x4", price: "110,000 COP / $27.50 USD" },
     { name: "Clase de Yoga x8", price: "200,000 COP / $50.00 USD" },
+];
+
+const alternative_packages = [
     { name: "Terapia Reiki", price: "70,000 COP / $17.50 USD" },
     { name: "Lectura Iching", price: "40,000 COP / $10.00 USD" },
     { name: "Terapia de Reiki + Sonido", price: "80,000 COP / $20.00 USD" },
@@ -24,7 +27,7 @@ const packages = [
 ];
 ---
 
-<Layout>
+<Layout lang="es" title="¡Bienvenido a Serendipia!">
     <div class="page">
         <section class="banner">
             <div class="content">
@@ -122,7 +125,7 @@ const packages = [
                 </p>
                 <div class="packages-carrousel">
                     {
-                        packages.slice(0, 4).map((pkg) => (
+                        yoga_packages.map((pkg) => (
                             <a
                                 href={`${whatsappUrl}?text=Hola%20Camilo,%20quiero%20contratar%20una%20"${encodeURIComponent(pkg.name)}"%20contigo`}
                                 class="package-card"
@@ -225,7 +228,7 @@ const packages = [
                 </p>
                 <div class="packages-carrousel">
                     {
-                        packages.slice(4).map((pkg) => (
+                        alternative_packages.map((pkg) => (
                             <a
                                 href={`${whatsappUrl}?text=Hola%20Camilo,%20quiero%20contratar%20una%20"${encodeURIComponent(pkg.name)}"%20contigo`}
                                 class="package-card"

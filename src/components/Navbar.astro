@@ -11,10 +11,10 @@ type NavItem = {
 };
 
 const nav_data: NavItem[] = [
+    { url: "/", text: t("nav.home") },
     { url: "/about", text: t("nav.about") },
     { url: "/contact", text: t("nav.contact") },
-    { url: "/blog", text: t("nav.blog") },
-    { url: "/resources", text: t("nav.resources") },
+    { url: "/posts", text: t("nav.posts") },
 ];
 ---
 
@@ -31,12 +31,5 @@ const nav_data: NavItem[] = [
             ))
         }
     </ul>
-    Menu
+    <a class="button"> Contactame </a>
 </nav>
-
-<style>
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
-</style>

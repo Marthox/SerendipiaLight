@@ -1,21 +1,23 @@
 export const languages = {
     en: "English",
-    fr: "Français",
+    es: "Español",
 };
 
 export const defaultLang = "en";
 
 export const ui = {
     en: {
+        "nav.home": "Home",
         "nav.about": "About Me",
         "nav.contact": "Contact",
-        "nav.blog": "Blog",
+        "nav.posts": "Posts",
         "nav.resources": "Resources",
     },
     es: {
+        "nav.home": "Inicio",
         "nav.about": "Sobre Mi",
         "nav.contact": "Contacto",
-        "nav.blog": "Blog",
+        "nav.posts": "Posts",
         "nav.resources": "Recursos",
     },
 };

@@ -4,7 +4,7 @@ import Layout from "@layouts/Layout.astro";
 import Logo from "@assets/logo.png";
 ---
 
-<Layout>
+<Layout lang="es" title="Contáctanos">
     <div class="page">
         <section class="banner">
             <img src={Logo.src} alt="Logo de Serendipia" />
@@ -28,59 +28,8 @@ import Logo from "@assets/logo.png";
         </section>
     </div>
 </Layout>
-
-<style lang="scss">
+<style>
     img {
-        max-height: 280px;
-        animation: heartbeat 3s infinite ease-in-out;
-    }
-
-    @keyframes heartbeat {
-        0%,
-        100% {
-            transform: scale(1);
-        }
-        14% {
-            transform: scale(1.05);
-        }
-        28% {
-            transform: scale(1);
-        }
-        42% {
-            transform: scale(1.05);
-        }
-        70% {
-            transform: scale(1);
-        }
-    }
-
-    .content {
-        display: flex;
-        width: 100%;
-    }
-    form {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        max-width: 400px;
-        align-self: center;
-        input {
-            padding: 0.5rem;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            width: 100%;
-        }
-        textarea {
-            padding: 0.5rem;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            width: 400px;
-            height: 220px;
-        }
-        .button {
-            align-self: center;
-            width: 200px;
-        }
+        max-inline-size: 400px;
     }
 </style>
