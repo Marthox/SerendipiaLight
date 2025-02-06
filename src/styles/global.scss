@@ -478,6 +478,10 @@ nav.mobile-navbar {
 }
 
 @media (max-width: 768px) {
+    .page {
+        padding-inline: 10px;
+        padding-block: 0px;
+    }
     .banner {
         flex-direction: column;
         max-width: 100%;
