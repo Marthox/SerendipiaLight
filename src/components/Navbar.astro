@@ -5,6 +5,9 @@ import { getLangFromUrl, useTranslations } from "@i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+const phone = "573168746720";
+const whatsappUrl = "https://wa.me/" + phone;
+
 type NavItem = {
     url: string;
     text: string;
@@ -31,5 +34,10 @@ const nav_data: NavItem[] = [
             ))
         }
     </ul>
-    <a class="button"> Contactame </a>
+    <a
+        href=`${whatsappUrl}?text=Hola%20Camilo,%20estoy%20interesado%20en%20tus%20clases%20de%20yoga%20y%20tus%20terapias%20de%20sanacion%20alternativas%20¿Me%20podrias%20dar%20mas%20informacion%20por%20favor?`
+        class="button"
+    >
+        Contactame
+    </a>
 </nav>

@@ -69,7 +69,7 @@ const posts = [
                     <div class="post-card">
                         <img src={post.cover} alt={post.title} />
                         <h2>{post.title}</h2>
-                        <p>{post.description}</p>
+                        <p class="description">{post.description}</p>
                         <a class="button" href={post.url}>
                             Leer más
                         </a>
@@ -80,7 +80,7 @@ const posts = [
     </div>
 </Layout>
 
-<style>
+<style lang="scss">
     .banner {
         align-items: start;
         flex-direction: column;

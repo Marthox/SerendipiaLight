@@ -509,6 +509,15 @@ nav.mobile-navbar {
     .mobile-navbar {
         display: flex;
     }
+    .description {
+        display: none;
+    }
+    .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
 }
 
 @media (min-width: 769px) {
